@@ -1,0 +1,49 @@
+###############################################################################
+#                                   Skimmer                                   #
+###############################################################################
+
+1.- Introduction
+
+This program is an easy and fast tool to skim a latino tree by selecting both
+events and branches.
+
+2.- Skimmer components
+
+The tool is composed of two parts:
+
+* runSkim. C++ code to skim one single root file into the skimmed version.
+
+* JobLauncher.py. Python code to organize the production of skims running on
+multiple files.
+
+3.- How to use it
+
+Step 1. Get this code from github.
+
+Step 2. Compile by just typing make. Make sure that you have loaded the CMSSW env.
+
+Step 3. Create a directory where the skimmed files will go. OUTPUTDIR.
+
+Step 4. Create a directory from where you will launch thhe jobs. WORKDIR.
+
+Step 5. Copy runSkim to WORKDIR.
+
+Step 6. Identify the directory that contains the root files you want to skim. SOURCE.
+
+Step 7. Identify the name of the sample you want to process. Example (ZZTo2L2Q). SAMPLE.
+        If you want to process all the samples just do "all".
+
+Step 8. Identify the path of the CMSSW release you want to use. Example ($HOME/CMSSW_9_4_4/src). CMSSWDIR.
+
+Step 9. python JobLauncher.py -d SOURCE -o OUTPUTDIR -t SAMPLE -q queue -c CMSSWDIR -w WORKDIR 
+
+Step 10. Go into WORKDIR and you will find a "skimmer_SAMPLE_none.sh" for each sample.
+
+Step 11. Run it. "source skimmer_SAMPLE_none.sh"
+
+The jobs will be sent.
+
+
+
+
+       
