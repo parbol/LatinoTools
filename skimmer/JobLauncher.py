@@ -141,7 +141,7 @@ if __name__ == "__main__":
         destiny = foutput
         log = foutput + ".log"
         err = foutput + ".err"
-        thesh.write('bsub -o ' + log + ' -e ' + err +  '-q ' + options.queue + ' launcher.sh ' + origin + ' ' + destiny + '\n')
+        thesh.write('bsub -o ' + log + ' -e ' + err +  ' -q ' + options.queue + ' launcher.sh ' + options.directory + '/' + forigin + ' ' + destiny + '\n')
     thesh.close()
  
     print ''
